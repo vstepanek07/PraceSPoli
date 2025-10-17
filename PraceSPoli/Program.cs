@@ -7,7 +7,8 @@
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Cau toto je test githubu");
             Console.WriteLine("cau");
-            Console.WriteLine("test test test");gdsgf\gr\gergg\\gg
+            Console.WriteLine("test test test");
+            Console.WriteLine("test 2");
         }
     }
 }
