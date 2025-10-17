@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Cau toto je test githubu");
-            Console.WriteLine("cau");
+            Console.WriteLine("cau"); Console.WriteLine("fsafdsfsdfsfs");
         }
     }
 }
