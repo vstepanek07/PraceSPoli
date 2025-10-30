@@ -1,4 +1,5 @@
-﻿using System.Security;
+﻿using System.ComponentModel.Design;
+using System.Security;
 
 namespace PraceSPoli_3SC
 {
@@ -48,7 +49,7 @@ namespace PraceSPoli_3SC
 
                 currentIndex++;//++currentIndex = currentindex +1
             }
-
+            Console.WriteLine("Prumer cisel je");
             Console.WriteLine(LepsiVypocetPrumeru(cisla));
 
             double LepsiVypocetPrumeru(int[] cislaIn)
@@ -122,32 +123,90 @@ namespace PraceSPoli_3SC
             //    Console.WriteLine("Pisu cislo 1");
             //}
 
-            int GetMaxValue(int[] cislaIn)
+            int LepsiGetMaxValue(int[] cislaIn)
             {
                 int maxValue = 0;
+                
 
                 //maxValue = cislaIn[0];
 
                 //projit postupne kazde olicko
                 // pokud je hodnota v poli vetsi nez maxvalue, atk zadat jako maxvalue hodnotu v cislain[current index]
-                cislaIn[currentIndex] = 0;
-                while (currentIndex < velikostPole)
+                int VelikostPole = cislaIn.Length;
+                if (velikostPole == 0)
                 {
-                    if (cislaIn[currentIndex] > maxValue)
+                    return -1;
+                }
+                else
+                {
+                    maxValue = cislaIn[0];
+    
+                    while (currentIndex < velikostPole)
                     {
                         maxValue = cislaIn[currentIndex];
                     }
-                    else
-                    {
-                        cislaIn[currentIndex]++;
-                    }
-                    cislaIn[currentIndex]++;
+
+
                     return maxValue;
-                    
-                }  
+
+
+
+                }
+                  
 
             }
-            Console.WriteLine(GetMaxValue(cisla));
+            Console.WriteLine("Největší číslo je : ");
+            Console.WriteLine(LepsiGetMaxValue(cisla));
+
+            string VypisVsechnyHodnotyOddeleneCarkou(int[] cislaIn)
+            {
+                string hodnoty = "";
+                //zjisti velikost pole, pokud je nula vratit ""
+                //pokud ne takk ve smyce projet hodnoty pridat "" + hodnotu
+                // hodnoty = " , " + cislaIny[0]
+
+                int VelikostPole = cislaIn.Length;
+                int currentIndex = 0;
+
+                while (currentIndex < velikostPole)
+                {
+                    if (currentIndex == 0 )
+                    {
+                        hodnoty = "" + cislaIn[currentIndex];
+                    }
+                    
+                    else
+                    {
+                        hodnoty = hodnoty + ", " + cislaIn[currentIndex];
+                    } 
+
+                    currentIndex++;
+                }
+
+
+                return hodnoty;
+
+
+            }
+            Console.WriteLine(VypisVsechnyHodnotyOddeleneCarkou(cisla));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
