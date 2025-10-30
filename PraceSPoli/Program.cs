@@ -1,4 +1,6 @@
-﻿namespace PraceSPoli_3SC
+﻿using System.Security;
+
+namespace PraceSPoli_3SC
 {
     internal class Program
     {
@@ -10,9 +12,9 @@
             //vytvorit funkci co spocita prumer a vrati ho
             //tu zavolat a zobrazit vysledek do Console
 
-            int cislo1;
-            int cislo2;
-            int cislo3 = 0;
+            //int cislo1;
+            //int cislo2;
+            //int cislo3 = 0;
             // toto funguje jen pro tri cisla 
             // universalne na 100 cisel
             // zakladam pole (array)
@@ -65,7 +67,7 @@
                 prumer = soucetCisel / (double)velikostPole;
 
                 return prumer;
-              
+                
             }
             
 
@@ -106,35 +108,46 @@
             //Console.WriteLine($"Maximum cisel je {max}");
             //NapisCislo1();
 
-            double VypocetPrumeru(int n1, int n2, int n3)
-            {
-                double prumer = 0;
-                //Kod nebo logika funkce
-                prumer = (n1 + n2 + n3) / 3.0; //matematicka operace pouziva cela cisla, jedno z nich musi byt desetinne
-                //navrat hodnoty
-                return prumer;
-                //zkraceno return  (n1 + n2 + n3) / 3;
-            }
-            void NapisCislo1() //funkce nic nevraci slovo Void, vstupni argumenty nejsou, ale i tak musim pouzit zavorky
-            {
-                Console.WriteLine("Pisu cislo 1");
-            }
+            //double VypocetPrumeru(int n1, int n2, int n3)
+            //{
+            //    double prumer = 0;
+            //    //Kod nebo logika funkce
+            //    prumer = (n1 + n2 + n3) / 3.0; //matematicka operace pouziva cela cisla, jedno z nich musi byt desetinne
+            //    //navrat hodnoty
+            //    return prumer;
+            //    //zkraceno return  (n1 + n2 + n3) / 3;
+            //}
+            //void NapisCislo1() //funkce nic nevraci slovo Void, vstupni argumenty nejsou, ale i tak musim pouzit zavorky
+            //{
+            //    Console.WriteLine("Pisu cislo 1");
+            //}
 
-            int GetMaxValue(int n1, int n2, int n3)
+            int GetMaxValue(int[] cislaIn)
             {
-                int max = n1;
+                int maxValue = 0;
 
-                if (n2 > max)
+                //maxValue = cislaIn[0];
+
+                //projit postupne kazde olicko
+                // pokud je hodnota v poli vetsi nez maxvalue, atk zadat jako maxvalue hodnotu v cislain[current index]
+                cislaIn[currentIndex] = 0;
+                while (currentIndex < velikostPole)
                 {
-                    max = n2;
-                }
-                if (n3 > max)
-                {
-                    max = n3;
-                }
-                return max;
-            }
+                    if (cislaIn[currentIndex] > maxValue)
+                    {
+                        maxValue = cislaIn[currentIndex];
+                    }
+                    else
+                    {
+                        cislaIn[currentIndex]++;
+                    }
+                    cislaIn[currentIndex]++;
+                    return maxValue;
+                    
+                }  
 
+            }
+            Console.WriteLine(GetMaxValue(cisla));
 
         }
 
