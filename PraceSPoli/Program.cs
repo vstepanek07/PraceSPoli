@@ -1,4 +1,6 @@
-﻿namespace PraceSPoli_3SC
+﻿using System.Security;
+
+namespace PraceSPoli_3SC
 {
     internal class Program
     {
@@ -12,6 +14,36 @@
             int cislo1;
             int cislo2;
             int cislo3 = 0;
+            //toto funguje jen na 3 cisla
+            //univerzalne na 100 cisel
+            //zakladam pole (array)
+            int velikostPole = 100;
+            int[] cisla = new int[velikostPole];
+            //cisla[0] = 1;
+            //cisla[1] = 5;
+
+            //Console.WriteLine(cisla[0]);
+            //Console.WriteLine(cisla[5]);
+            //Console.WriteLine(cisla[100]);// je sptane protoze pozice 100 neexistuje
+            //Console.WriteLine(cisla);// nespadne, napise jen systemovy typ prgramu
+            Console.WriteLine("kolik čísel chceš zadat?");
+            velikostPole = int.Parse(Console.Readline());
+            int[] cisla = new int[velikostPole];
+
+            int currentIndex = 0;
+
+            while (SecureString < velikostPole)
+            {
+                Console.WriteLine($"zadej číslo {currentIndex + 1})
+                int tempCislo = int.Parse(Console.ReadLine());
+
+
+
+
+                currentIndex++;
+                C
+            }
+
 
             Console.WriteLine("Zadej cislo 1");
             cislo1 = int.Parse(Console.ReadLine());
